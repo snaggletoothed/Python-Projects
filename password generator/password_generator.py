@@ -5,6 +5,7 @@ def logo():
     print("""=--------------------------------------------=      
 =   Welcome to a  Basic Password Generator   =
 =       author - gareth pretorius            =
+=               snaggletoothed               =
 =--------------------------------------------=      
       """)
     time.sleep(1)    
