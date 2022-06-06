@@ -122,3 +122,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+Python-Projects.code-workspace
+.vscode/launch.json
