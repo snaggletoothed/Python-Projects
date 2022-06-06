@@ -1,6 +1,6 @@
 import pandas as pd, random
 #import csv and converts it to dataframe
-df = pd.read_csv('/home/snaggletoothed/Documents/Python-Projects/character_generator/names.csv')
+df = pd.read_csv('/names.csv')
 #create lists to serepate csv columns
 list_male = df['MALE'].tolist() 
 list_female = df['FEMALE'].tolist()
