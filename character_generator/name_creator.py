@@ -8,17 +8,17 @@ surname_list = df['SURNAMES'].tolist()
 
 #func to assign male names
 def male_name():
-    x = random.randint(1,6288)
+    x = random.randrange(1,len(list_male))
     name = list_male[x]
-    x = random.randint(1,10443)
+    x = random.randrange(1,len(surname_list))
     surname = surname_list[x]
-    male_name = name + ' ' + surname
+    male_name = str(name) + ' ' + str(surname)
     return male_name
 #func to assisgn female names
 def female_name():
-    x = random.randint(1,4391)
+    x = random.randrange(1,len(list_female))
     name = list_female[x]
-    x = random.randint(1,10443)
+    x = random.randrange(1,len(surname_list))
     surname = surname_list[x]
-    female_name = name + ' ' + surname
+    female_name = str(name) + ' ' + str(surname)
     return female_name  
