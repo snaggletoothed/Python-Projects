@@ -1,0 +1,49 @@
+
+import random
+from time import sleep
+
+
+
+print("""
+##################################
+###                            ###    
+###     welcome to inquisitor  ###
+###      a basic and random    ### 
+###      word guessing game    ### 
+###----------------------------### 
+###            author          ###            
+###      gareth pretorius      ### 
+###                            ###
+##################################
+""")
+
+
+attempts = 0 
+InquisitorWordList = ["alfredo","grapple","defecit"]
+def inquisitor():    
+    choices = input("Which of these words am I thinking of:\n"+"\n##################################\n"+"      "+str(InquisitorWordList[0])+" "+str(InquisitorWordList[1])+" "+str(InquisitorWordList[2])+"\n##################################\n"+"\nTake a guess?: ")
+    choicesList = []
+    for x in choices:
+        choicesList.append(x)
+    InquisitorWord = InquisitorWordList[random.randint(0,2)]
+    InquisitorList = []
+    for x in InquisitorWord:
+        InquisitorList.append(x)
+    y = 0 
+    count = 0
+    for x in  choicesList:
+        if len(choices)==len(InquisitorWord):
+            if choicesList[y] in InquisitorList[y]:
+                print(choicesList[y]+" = "+"✅")
+                sleep(0.5)
+                count += 1
+            else:
+                print(choicesList[y]+" = "+"❎")
+                sleep(.5)
+            y+= 1
+    if count == len(InquisitorWord):
+            print("CONGRATS RIGHT WORD")
+    else:
+            print("INCORRECT WORD, TRY AGAIN")
+            inquisitor()
+inquisitor()
