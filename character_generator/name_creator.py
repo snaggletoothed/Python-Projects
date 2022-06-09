@@ -1,4 +1,3 @@
-from secrets import choice
 import pandas as pd, random
 #import csv and converts it to dataframe
 df = pd.read_csv('names.csv')
@@ -57,3 +56,4 @@ elif choices in ["X","x","mix","mixed","Mix","Mixed","MIXED","MIX"] :
         elif y == 0:
             print("Number :"+str(x)+" "+female_name())
             x += 1
+quit()
