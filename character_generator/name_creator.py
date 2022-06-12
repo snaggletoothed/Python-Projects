@@ -30,7 +30,7 @@ print("""
       ^  random name generator      ^
       ^  author : gareth pretorius  ^
       ###############################""")
-amount = input("How Many Names to Generate?: ")
+amount = input("How Many Names to Generate?: ")#add catch here for incorrect input
 choices = input("Generate [M]ale, [F]emale, or Mi[x]ed?: ")
 
 if  choices in ["M","m","Male","male","MALE"]:
@@ -56,4 +56,6 @@ elif choices in ["X","x","mix","mixed","Mix","Mixed","MIXED","MIX"] :
         elif y == 0:
             print("Number :"+str(x)+" "+female_name())
             x += 1
+else:
+    print("Incorrect Input. Please Retry...")
 quit()
