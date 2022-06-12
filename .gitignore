@@ -124,3 +124,4 @@ dmypy.json
 .pyre/
 Python-Projects.code-workspace
 .vscode/launch.json
+.~lock.planets.ods#
