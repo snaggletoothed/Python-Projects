@@ -1,5 +1,13 @@
-import pandas as pd, name_creator,random
+import pandas as pd, name_creator,random,os,time,sys,colorama
 
+def write(write):
+    #requests for each letter
+    for i in write:
+        #sys.stdout.write doesn't create a new line for each print
+        sys.stdout.write(i)
+        sys.stdout.flush()
+        time.sleep(.001)
+                
 
 #import worksheet
 new_haven = ('NEW_HAVEN.xlsx')
@@ -29,6 +37,39 @@ dfCharacters = pd.read_excel(new_haven,sheet_name='Character')
 
 #function to generate a name for thhhhhe player character
 def citizenryifier():
+    def citystatehistory(citystate):
+        os.system("clear||cls")
+        
+        citystate=citystate
+        cityState=dfcity_States.loc[dfcity_States['CITY STATES']==citystate]
+        write(logo)
+        text=(str(cityState['HISTORY'].values).replace("['","\n").replace("']",""))
+        write(text)
+    
+    
+    
+    
+    logo = colorama.Back.RED+"""
+                                                                                                
+███╗   ██╗███████╗██╗    ██╗    ██╗  ██╗ █████╗ ██╗   ██╗███████╗███╗   ██╗                     
+████╗  ██║██╔════╝██║    ██║    ██║  ██║██╔══██╗██║   ██║██╔════╝████╗  ██║                     
+██╔██╗ ██║█████╗  ██║ █╗ ██║    ███████║███████║██║   ██║█████╗  ██╔██╗ ██║                     
+██║╚██╗██║██╔══╝  ██║███╗██║    ██╔══██║██╔══██║╚██╗ ██╔╝██╔══╝  ██║╚██╗██║                     
+██║ ╚████║███████╗╚███╔███╔╝    ██║  ██║██║  ██║ ╚████╔╝ ███████╗██║ ╚████║                     
+╚═╝  ╚═══╝╚══════╝ ╚══╝╚══╝     ╚═╝  ╚═╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═══╝                     
+ ██████╗██╗████████╗██╗███████╗███████╗███╗   ██╗██████╗ ██╗   ██╗██╗███████╗██╗███████╗██████╗ 
+██╔════╝██║╚══██╔══╝██║╚══███╔╝██╔════╝████╗  ██║██╔══██╗╚██╗ ██╔╝██║██╔════╝██║██╔════╝██╔══██╗
+██║     ██║   ██║   ██║  ███╔╝ █████╗  ██╔██╗ ██║██████╔╝ ╚████╔╝ ██║█████╗  ██║█████╗  ██████╔╝
+██║     ██║   ██║   ██║ ███╔╝  ██╔══╝  ██║╚██╗██║██╔══██╗  ╚██╔╝  ██║██╔══╝  ██║██╔══╝  ██╔══██╗
+╚██████╗██║   ██║   ██║███████╗███████╗██║ ╚████║██║  ██║   ██║   ██║██║     ██║███████╗██║  ██║
+ ╚═════╝╚═╝   ╚═╝   ╚═╝╚══════╝╚══════╝╚═╝  ╚═══╝╚═╝  ╚═╝   ╚═╝   ╚═╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝
+"""+colorama.Style.RESET_ALL+"""-BROUGHT TO YOU BY 
+            THE NEW HAVEN
+                AMALGAMATED
+                    CITY WATHCMEN\n"""
+    
+    os.system("cls|clear")
+
     citystates = ["REYKJAVÍK","CHICAGO-2","NEW SHINJUKU","HANOI","EUPHORIA"]
 
 #function to be used in text to generate possitve affirmations***pointless function really
@@ -44,29 +85,9 @@ def citizenryifier():
         elif x == 3 :
             affirmation = affirmationsList[x]
         return affirmation
-
-    choice = input("""
-
-                                                                                               
- ███╗   ██╗███████╗██╗    ██╗    ██╗  ██╗ █████╗ ██╗   ██╗███████╗███╗   ██╗                     
-████╗  ██║██╔════╝██║    ██║    ██║  ██║██╔══██╗██║   ██║██╔════╝████╗  ██║                     
-██╔██╗ ██║█████╗  ██║ █╗ ██║    ███████║███████║██║   ██║█████╗  ██╔██╗ ██║                     
-██║╚██╗██║██╔══╝  ██║███╗██║    ██╔══██║██╔══██║╚██╗ ██╔╝██╔══╝  ██║╚██╗██║                     
-██║ ╚████║███████╗╚███╔███╔╝    ██║  ██║██║  ██║ ╚████╔╝ ███████╗██║ ╚████║                     
-╚═╝  ╚═══╝╚══════╝ ╚══╝╚══╝     ╚═╝  ╚═╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═══╝     
-
-                
- ██████╗██╗████████╗██╗███████╗███████╗███╗   ██╗██████╗ ██╗   ██╗██╗███████╗██╗███████╗██████╗ 
-██╔════╝██║╚══██╔══╝██║╚══███╔╝██╔════╝████╗  ██║██╔══██╗╚██╗ ██╔╝██║██╔════╝██║██╔════╝██╔══██╗
-██║     ██║   ██║   ██║  ███╔╝ █████╗  ██╔██╗ ██║██████╔╝ ╚████╔╝ ██║█████╗  ██║█████╗  ██████╔╝
-██║     ██║   ██║   ██║ ███╔╝  ██╔══╝  ██║╚██╗██║██╔══██╗  ╚██╔╝  ██║██╔══╝  ██║██╔══╝  ██╔══██╗
-╚██████╗██║   ██║   ██║███████╗███████╗██║ ╚████║██║  ██║   ██║   ██║██║     ██║███████╗██║  ██║
- ╚═════╝╚═╝   ╚═╝   ╚═╝╚══════╝╚══════╝╚═╝  ╚═══╝╚═╝  ╚═╝   ╚═╝   ╚═╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝
--BROUGHT TO YOU BY 
-            THE NEW HAVEN
-                AMALGAMATED
-                    CITY WATHCMEN                                                                                                                 
-
+    write(logo)
+    time.sleep(1)
+    text="""                                                                                  
 CONGRATULATIONS! 
 YOU ARE ELLIGIBLE FOR CITIZENSHIP TO ONE OF THE FIVE[5] CITY STATES
 All that's  in need is a [NAME], some BIOLOGICAL INFORMATION and a simple test
@@ -83,13 +104,19 @@ OR ELSE
 this session must be terminated
 -NEW HAVEN AMALGAMATED CITY WATHCMEN #U+1F357  
 
->>>>>>>>>please use the correct character below : [G]enerate|||[C]hoose>>>>>>\n""")
-
+>>>>>>>>>please use the correct character below : [G]enerate|||[C]hoose>>>>>>\n"""
+    write(text)
+    choice=input()
+    os.system("cls|clear")    
 #to generate a random name from csv
     if choice in ['G','g']:
-        def name_maker():    
-            choice = input("""
+        def name_maker():
+            write(logo)
+            time.sleep(1)        
+            text = """
 Now, would it be [M]ale or [F]emale?*
+
+   
     
 *INFORMATION FOOTNOTE:
 names are generated by a randomized selection from all those currently
@@ -99,14 +126,28 @@ DEAD
 ALWAYS ASSUME COINCIDENCE
 OR ELSE
 this session will be terminated
--NEW HAVEN AMALGAMATED CITY WATHCMEN #U+1F32D                        
->>>>>>>><<<<<please choose the correct input below  : [M]ale|||[F]emale>>>>>>>>>\n""")
-           
+-NEW HAVEN AMALGAMATED CITY WATHCMEN #U+1F32D       
+                 
+>>>>>>>><<<<<please choose the correct input below  : [M]ale|||[F]emale>>>>>>>>>\n"""
+            write(text)
+            choice=input()
+            os.system("cls|clear")
+            write(logo)
+            time.sleep(1)
+            
             if choice in ['M','m']:
                 citystate = citystates[random.randint(0,4)]
                 credits=(random.randint(0,5000))
-                print("CONGRATS, YOU HAVE WON :"+str(credits)+" CREDITS IN THE NEW HAVEN, NEW CITIZEN LOTTERY!\n")
-                print("CONGRATULATIONS! YOU ARE NOW A CITIZEN OF: "+citystate+"\n")
+                text="\nCONGRATULATIONS! YOU HAVE WON :"+str(credits)+" CREDITS IN THE NEW HAVEN, NEW CITIZEN LOTTERY!\n"
+                write(text)
+                text="\nCONGRATULATIONS! YOU ARE NOW A CITIZEN OF: "+citystate+"\n"
+                write(text)
+                text="\nWOULD YOU LIKE INFORMATION ABOUT["+citystate+"]?"
+                write(text)
+                choice=input("\n>>>>>>>>>>>>>>>>>>>>[I]NFO|[C]ONTINUE<<<<<<<<<<<<<<<<<<<<<\n")
+                if choice in ['i','I','INFO','info']:
+                    citystatehistory(citystate)
+                                
                 CharacterSheet={
                     "NAME":name_creator.male_name(),
                     "AGE":random.randint(18,60),
@@ -118,8 +159,10 @@ this session will be terminated
             elif choice in ['F','f']:
                 citystate = citystates[random.randint(0,4)]
                 credits=(random.randint(0,5000))
-                print("CONGRATS, YOU HAVE WON :"+str(credits)+" CREDITS IN THE NEW HAVEN, NEW CITIZEN LOTTERY!\n")
-                print("CONGRATULATIONS! YOU ARE NOW A CITIZEN OF: "+citystate+"\n")
+                text="\nCONGRATULATIONS! YOU HAVE WON :"+str(credits)+" CREDITS IN THE NEW HAVEN, NEW CITIZEN LOTTERY!\n"
+                write(text)
+                text="\nCONGRATULATIONS! YOU ARE NOW A CITIZEN OF: "+citystate+"\n"
+                write(text)
                 CharacterSheet={
                     "NAME":name_creator.female_name(),
                     "AGE":random.randint(18,60),
@@ -131,15 +174,21 @@ this session will be terminated
                 print("INCORRECT INPUT. TERMINATING")
 #for user customization
     elif choice in['C','c']:
+        os.system("cls|clear")
+        write(logo)
+        time.sleep(1)
         name = input(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>type name below<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
-        print(positive_affirmations()+"this choicely name of: "+name)
-
-        gender=input(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>input gender identity below<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")  
-        age=input(">>>>>>>>>>>>>>>>>>>>>>>choose age[18:60] below>>>>>>>>>>>>>>>>>>>>>>>>>>\n")  
+        text=(positive_affirmations()+", this choicely name of: "+name)
+        write(text)
+        gender=input("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>input gender identity below<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")  
+        age=input("\n>>>>>>>>>>>>>>>>>>>>>>>choose age[18:60] below>>>>>>>>>>>>>>>>>>>>>>>>>>\n")  
         citystate = citystates[random.randint(0,4)]
         credits=(random.randint(0,5000))
-        print("CONGRATS, YOU HAVE WON :"+str(credits)+" CREDITS IN THE NEW HAVEN, NEW CITIZEN LOTTERY!\n")
-        print("CONGRATULATIONS! YOU ARE NOW A CITIZEN OF: "+citystate+"\n")
+        text="\nCONGRATULATIONS! YOU HAVE WON :"+str(credits)+" CREDITS IN THE NEW HAVEN, NEW CITIZEN LOTTERY!\n"
+        write(text)
+        text="\nCONGRATULATIONS! YOU ARE NOW A CITIZEN OF: "+citystate+"\n"
+        write(text)
+
         CharacterSheet={
                     "NAME":name,
                     "AGE":age,
@@ -151,8 +200,8 @@ this session will be terminated
     else:
         print("INCORRECT INPUT. TERMINATING")
    
-    name = name_maker()
-    return name
+    CharacterSheet = name_maker()
+    return CharacterSheet
 
 def character_builder():
     pass
@@ -321,4 +370,4 @@ SO TO WHERE SHALL IT BE?:
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>please choose the correct number below>>>>>>>>>>>>>>>>>>>>>>>
 """)
 
-print(citizenryifier())
+citizenryifier()
