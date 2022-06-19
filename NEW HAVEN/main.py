@@ -35,7 +35,7 @@ dfCharacters = pd.read_excel(new_haven,sheet_name='Character')
 #    'Credits': player_character['CREDITS'].to_string(index=False)#values added later
 #    }
 
-#function to generate a name for thhhhhe player character
+#function to generate a thhhhhe player character
 def citizenryifier():
     def citystatehistory(citystate):
         os.system("clear||cls")
@@ -305,6 +305,7 @@ def city_Distances_UI():
     else:
         print("incorrect choice made, resetting...")
         city_Distances_UI()
+
 #function to travel between different transport depots   ***INCOMPLETE
 def public_Transport(current_location):
     current_location = current_location 
@@ -370,4 +371,5 @@ SO TO WHERE SHALL IT BE?:
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>please choose the correct number below>>>>>>>>>>>>>>>>>>>>>>>
 """)
 
-citizenryifier()
+pc=citizenryifier()
+print(pc)
